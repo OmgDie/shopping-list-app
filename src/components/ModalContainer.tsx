@@ -61,9 +61,9 @@ const ModalContainer: React.FC<ModalContainerProps> = ({ onAddProduct }) => {
     <div className="modal-container">
       {showModal && (
         <div className="modal">
-          <h2>Create Product</h2>
+          <h2>Создать карточку</h2>
           <TextField
-            label="Name"
+            label="Название"
             value={name}
             error={nameError}
             onChange={(e) => {
@@ -72,7 +72,7 @@ const ModalContainer: React.FC<ModalContainerProps> = ({ onAddProduct }) => {
             }}
           />
           <TextField
-            label="Price"
+            label="Цена"
             value={price}
             error={priceError}
             onChange={(e) => {
@@ -80,13 +80,13 @@ const ModalContainer: React.FC<ModalContainerProps> = ({ onAddProduct }) => {
               setPriceError('');
             }}
           />
-          <TextField label="Image URL" value={image} onChange={(e) => setImage(e.target.value)} />
-          <TextField label="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
-          <Button label="Create" onClick={handleCreateProduct} />
+          <TextField label="URL изображения" value={image} onChange={(e) => setImage(e.target.value)} />
+          <TextField label="Описание" value={description} onChange={(e) => setDescription(e.target.value)} />
+          <Button label="Создать" onClick={handleCreateProduct} className="add-product-btn"/>
         </div>
       )}
       <Button
-        label="Add Product"
+        label="Добавить товар"
         onClick={() => setShowModal(true)}
         disabled={showModal}
         className={showModal ? 'add-product-btn-disabled' : 'add-product-btn'}

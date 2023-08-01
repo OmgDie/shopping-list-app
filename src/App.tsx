@@ -1,4 +1,3 @@
-// App.tsx
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from './redux/reducers/rootReducer';
@@ -30,7 +29,8 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <h1>Shopping List</h1>
+      <div className="background-container" />
+      <h1>Список Покупок</h1>
       <ModalContainer onAddProduct={handleAddProduct} />
       <div className="product-list">
         {products.map((product) => (

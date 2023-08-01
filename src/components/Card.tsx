@@ -16,20 +16,22 @@ const Card: React.FC<CardProps> = ({ product, onBuy, onDelete }) => {
       )}
       <div className="card-content">
         <h3>{product.name}</h3>
-        <p>Price: ₽{product.price}</p>
         {product.description && <p>{product.description}</p>}
+        <h2>{product.price} РУБ</h2>
       </div>
+      <div className="button-container">
       <Button
-        label="Buy"
+        label="Купить"
         onClick={onBuy}
         disabled={product.bought}
         className={product.bought ? 'buy-product-btn-disabled' : 'buy-product-btn'}
       />
       <Button
-        label="Delete"
+        label="Удалить"
         onClick={onDelete}
         className="delete-product-btn"
       />
+      </div>
     </div>
   );
 };
