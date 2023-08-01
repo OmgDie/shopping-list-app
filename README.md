@@ -45,22 +45,22 @@
 
 1. Склонируйте репозиторий на свой компьютер с помощью команды:
 
-git clone https://github.com/OmgDie/shopping-list-app.git
+    git clone https://github.com/OmgDie/shopping-list-app.git
 
 
 2. Перейдите в папку проекта:
 
-cd shopping-list-app
+    cd shopping-list-app
 
 
 3. Установите зависимости:
 
-npm install
+    npm install
 
 
 4. Запустите проект:
 
-npm start
+    npm start
 
 
 После этого приложение будет доступно в браузере по адресу [http://localhost:3000](http://localhost:3000).
