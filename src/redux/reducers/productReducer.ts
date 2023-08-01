@@ -5,7 +5,7 @@ const initialState: ProductState = {
   products: [],
   notification: {
     message: '',
-    productName: '', // По умолчанию поле productName имеет пустую строку, а не undefined
+    productName: '',
   },
 };
 
@@ -17,7 +17,7 @@ const productReducer: Reducer<ProductState, ProductActionTypes> = (state = initi
         products: [...state.products, action.payload],
         notification: {
           message: `${action.payload.name} успешно добавлен`,
-          productName: action.payload.name, // Записываем имя добавленной карточки
+          productName: action.payload.name, 
         },
       };
     case DELETE_PRODUCT:
@@ -28,7 +28,7 @@ const productReducer: Reducer<ProductState, ProductActionTypes> = (state = initi
           products: state.products.filter((product) => product.id !== action.payload),
           notification: {
             message: `${deletedProduct.name} успешно удален`,
-            productName: deletedProduct.name, // Записываем имя удаленной карточки
+            productName: deletedProduct.name, 
           },
         };
       }
@@ -43,7 +43,7 @@ const productReducer: Reducer<ProductState, ProductActionTypes> = (state = initi
           ),
           notification: {
             message: `${boughtProduct.name} успешно куплен`,
-            productName: boughtProduct.name, // Записываем имя купленной карточки
+            productName: boughtProduct.name, 
           },
         };
       }
@@ -52,8 +52,8 @@ const productReducer: Reducer<ProductState, ProductActionTypes> = (state = initi
       return {
         ...state,
         notification: {
-          message: action.payload, // Обновляем сообщение уведомления
-          productName: '', // При отображении уведомления, поле productName может быть пустой строкой
+          message: action.payload, 
+          productName: '', 
         },
       };
     default:
