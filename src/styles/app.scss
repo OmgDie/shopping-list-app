@@ -1,0 +1,32 @@
+@import 'variables';
+
+.app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .background-container {
+    background-image: url('../assets/BG.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  h1 {
+    color: $primary-color;
+    font-size: 40px;
+  }
+
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }

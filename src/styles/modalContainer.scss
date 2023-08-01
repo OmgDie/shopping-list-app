@@ -1,0 +1,43 @@
+@import 'variables';
+
+.modal-container {
+    margin-bottom: 20px;
+  }
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal h2 {
+    color: $primary-color;
+  }
+  
+  .modal .text-field {
+    margin-bottom: 10px; 
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal .text-field label {
+    font-weight: bold;
+    margin-bottom: 5px; 
+  }
+  
+  .modal .text-field input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .modal .button {
+    margin-top: 10px;
+  }

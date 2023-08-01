@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
+import '../styles/notification.scss';
 
 const Notification: React.FC = () => {
   const notificationMessage = useSelector((state: RootState) => state.products.notification.message);

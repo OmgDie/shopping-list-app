@@ -1,0 +1,66 @@
+@import 'variables';
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  
+    &.secondary {
+      background-color: $secondary-color;
+      color: white;
+  
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+
+.add-product-btn {
+    background-color: $primary-color; 
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .add-product-btn-disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+  }
+  
+  .buy-product-btn,
+  .delete-product-btn {
+    background-color: $primary-color; 
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-left: 16px;
+  }
+  
+  .add-product-btn:hover,
+  .buy-product-btn:hover,
+  .delete-product-btn:hover {
+    background-color: #234297;
+  }
+  
+  .buy-product-btn-disabled,
+  .delete-product-btn-disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    margin-left: 16px;
+  }

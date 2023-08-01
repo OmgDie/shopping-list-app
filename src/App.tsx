@@ -7,7 +7,7 @@ import Notification from './components/Notification';
 import { addProduct, showNotification } from './redux/actions/productAction';
 import { Product, ProductActionTypes } from './redux/types';
 import { BUY_PRODUCT, DELETE_PRODUCT } from './redux/types';
-import './styles/main.scss';
+import './styles/app.scss';
 
 const App: React.FC = () => {
   const products = useSelector((state: RootState) => state.products.products);

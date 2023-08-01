@@ -1,6 +1,8 @@
 import React from 'react';
 import { Product, ProductActionTypes, DELETE_PRODUCT, BUY_PRODUCT } from '../redux/types';
 import Button from './Button';
+import '../styles/buttons.scss';
+import '../styles/card.scss';
 
 interface CardProps {
   product: Product;

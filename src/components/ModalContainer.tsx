@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Product } from '../redux/types';
 import TextField from './TextField';
 import Button from './Button';
+import '../styles/buttons.scss';
+import '../styles/modalContainer.scss';
 
 interface ModalContainerProps {
   onAddProduct: (product: Product) => void;
