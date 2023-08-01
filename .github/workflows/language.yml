@@ -1,0 +1,16 @@
+name: Language
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  language:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Out Repository
+      uses: actions/checkout@v2
+
+    - name: Language Statistics
+      run: echo "GitHub Action"
