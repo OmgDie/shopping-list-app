@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Описание проекта "Список Покупок"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Проект "Список Покупок" представляет собой веб-приложение для управления списком покупок. Основной функционал приложения включает возможность создания, просмотра, редактирования и удаления товаров из списка покупок.
 
-## Available Scripts
+## Используемые технологии
 
-In the project directory, you can run:
+- React.js для создания пользовательского интерфейса
+- Redux для управления состоянием приложения
+- Redux Thunk для обработки асинхронных действий
+- TypeScript для типизации данных
+- Scss для стилизации компонентов
 
-### `npm start`
+## Компоненты
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Кнопка
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Описание: Компонент представляет собой кнопку с возможностью задания текстового содержания и обработчика события onClick.
+- Входные параметры:
+  - label: текст на кнопке
+  - onClick: функция-обработчик нажатия на кнопку
 
-### `npm test`
+### Карточка с товаром
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Описание: Компонент отображает информацию о товаре в виде карточки.
+- Входные параметры:
+  - product: объект, содержащий информацию о товаре (название, стоимость, изображение, описание)
+  - onBuy: функция-обработчик события "покупка товара"
+  - onDelete: функция-обработчик события "удаление товара"
 
-### `npm run build`
+### Список карточек
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Описание: Компонент представляет собой список карточек товаров.
+- Входные параметры:
+  - products: массив объектов товаров для отображения
+  - onBuy: функция-обработчик события "покупка товара"
+  - onDelete: функция-обработчик события "удаление товара"
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Уведомление
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Описание: Компонент отображает уведомление о результате действия пользователя (например, успешное добавление товара в список).
+- Входные параметры:
+  - message: текст уведомления
+  - productName: название товара, связанное с действием
 
-### `npm run eject`
+### Модальное окно для создания товара
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Описание: Компонент представляет собой модальное окно, в котором пользователь может создать новый товар и указать информацию о нем (название, стоимость, изображение, описание).
+- Входные параметры:
+  - onAddProduct: функция-обработчик события "создание товара"
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Текстовое поле 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Описание: Компонент представляет собой текстовое поле для ввода текста.
+- Входные параметры:
+  - label: название поля
+  - value: текущее значение поля
+  - onChange: функция-обработчик события изменения значения поля 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Действия
 
-## Learn More
+### Создать товар
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Описание: Действие позволяет пользователю создать новый товар с указанием всех необходимых параметров.
+- Действие: "CREATE_PRODUCT"
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Добавить товар в список
 
-### Code Splitting
+- Описание: Действие добавляет созданный пользователем товар в список покупок.
+- Действие: "ADD_PRODUCT"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Удалить товар из списка
 
-### Analyzing the Bundle Size
+- Описание: Действие удаляет товар из списка покупок по его идентификатору.
+- Действие: "DELETE_PRODUCT"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Купить товар
 
-### Making a Progressive Web App
+- Описание: Действие помечает товар как купленный.
+- Действие: "BUY_PRODUCT"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Информация о товаре
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Описание: Объект, содержащий информацию о товаре:
+  - Название (name)
+  - Стоимость (price)
+  - Изображение (image)
+  - Дополнительное описание (description)
