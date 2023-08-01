@@ -11,19 +11,19 @@ interface AddProductAction {
 
 interface DeleteProductAction {
   type: typeof DELETE_PRODUCT;
-  payload: number; // Product ID
+  payload: number; 
   action: string;
 }
 
 interface BuyProductAction {
   type: typeof BUY_PRODUCT;
-  payload: number; // Product ID
+  payload: number; 
   action: string;
 }
 
 interface ShowNotificationAction {
     type: typeof SHOW_NOTIFICATION;
-    payload: string; // Тип payload для уведомления - строка
+    payload: string; 
     productName?: string;
   }
 
@@ -45,7 +45,5 @@ export interface ProductState {
 
 export interface NotificationState {
     message: string;
-    productName: string; // Добавляем поле productName
+    productName: string; 
 }
-export type OnDeleteProduct = (product: Product) => void;
-export type OnBuyProduct = (product: Product) => void;
