@@ -2,19 +2,19 @@
     "compilerOptions": {
       "jsx": "react",
       "moduleResolution": "node",
-      "target": "es6", // Целевая версия JavaScript
-      "module": "es6", // Формат модулей (ES6)
-      "outDir": "./dist", // Директория для компилированных файлов
-      "strict": true, // Строгий режим проверки типов
-      "esModuleInterop": true, // Использование CommonJS для импорта модулей
-      "forceConsistentCasingInFileNames": true, // Проверка согласованности регистра имен файлов
-      "skipLibCheck": true, // Пропустить проверку объявлений .d.ts файлов из установленных пакетов
-      "baseUrl": ".", // Указывает на текущую директорию проекта
+      "target": "es6", 
+      "module": "es6", 
+      "outDir": "./dist", 
+      "strict": true, 
+      "esModuleInterop": true, 
+      "forceConsistentCasingInFileNames": true, 
+      "skipLibCheck": true, 
+      "baseUrl": ".", 
       "paths": {
         "redux": ["node_modules/redux"]
       }
     },
-    "include": ["src"], // Директория с исходными файлами TypeScript
-    "exclude": ["node_modules"] // Исключить из компиляции директорию node_modules
+    "include": ["src"], 
+    "exclude": ["node_modules"] 
   }
   
