@@ -45,7 +45,7 @@
 
 1. Склонируйте репозиторий на свой компьютер с помощью команды:
 
-    git clone https://github.com/OmgDie/shopping-list-app.git
+   ### git clone https://github.com/OmgDie/shopping-list-app.git
 
 
 2. Перейдите в папку проекта:
