@@ -4,8 +4,9 @@ import { RootState } from './redux/reducers/rootReducer';
 import ModalContainer from './components/ModalContainer';
 import Card from './components/Card';
 import Notification from './components/Notification';
-import { addProduct, deleteProduct, buyProduct, showNotification } from './redux/actions/productAction';
-import { Product } from './redux/types';
+import { addProduct, showNotification } from './redux/actions/productAction';
+import { Product, ProductActionTypes } from './redux/types';
+import { BUY_PRODUCT, DELETE_PRODUCT } from './redux/types';
 import './styles/main.scss';
 
 const App: React.FC = () => {
@@ -17,14 +18,14 @@ const App: React.FC = () => {
     dispatch(showNotification(`Товар "${product.name}" успешно добавлен!`));
   };
 
-  const handleDeleteProduct = (product: Product) => {
-    dispatch(deleteProduct(product.id));
-    dispatch(showNotification(`Удаление товара "${product.name}" успешно!`));
-  };
-  
-  const handleBuyProduct = (product: Product) => {
-    dispatch(buyProduct(product.id));
-    dispatch(showNotification(`Покупка товара "${product.name}" успешно совершена!`));
+  const handleProductAction = (action: ProductActionTypes) => {
+    dispatch(action);
+    const productName = products.find((product) => product.id === action.payload)?.name;
+    if (action.type === BUY_PRODUCT) {
+      dispatch(showNotification(`Товар "${productName}" успешно куплен!`));
+    } else if (action.type === DELETE_PRODUCT) {
+      dispatch(showNotification(`Товар "${productName}" успешно удален!`));
+    }
   };
 
   return (
@@ -37,8 +38,7 @@ const App: React.FC = () => {
           <Card
             key={product.id}
             product={product}
-            onBuy={() => handleBuyProduct(product)}
-            onDelete={() => handleDeleteProduct(product)}
+            onAction={(action) => handleProductAction(action)}
           />
         ))}
       </div>

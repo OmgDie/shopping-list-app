@@ -1,14 +1,34 @@
 import React from 'react';
-import { Product } from '../redux/types';
+import { Product, ProductActionTypes, DELETE_PRODUCT, BUY_PRODUCT } from '../redux/types';
 import Button from './Button';
 
 interface CardProps {
   product: Product;
-  onBuy: () => void;
-  onDelete: () => void;
+  onBuy?: () => void;
+  onDelete?: () => void;
+  onAction: (action: ProductActionTypes) => void;
 }
 
-const Card: React.FC<CardProps> = ({ product, onBuy, onDelete }) => {
+const Card: React.FC<CardProps> = ({ product, onAction }) => {
+  const handleBuy = () => {
+    const action: ProductActionTypes = {
+      type: BUY_PRODUCT,
+      payload: product.id,
+      action: 'Buy Product',
+    };
+    onAction(action);
+  };
+  
+  const handleDelete = () => {
+    const action: ProductActionTypes = {
+      type: DELETE_PRODUCT,
+      payload: product.id, 
+      action: 'Delete Product',
+    };
+    onAction(action);
+  };
+  
+
   return (
     <div className="product-card" key={product.id}>
       {product.image && (
@@ -20,17 +40,17 @@ const Card: React.FC<CardProps> = ({ product, onBuy, onDelete }) => {
         <h2>{product.price} РУБ</h2>
       </div>
       <div className="button-container">
-      <Button
-        label="Купить"
-        onClick={onBuy}
-        disabled={product.bought}
-        className={product.bought ? 'buy-product-btn-disabled' : 'buy-product-btn'}
-      />
-      <Button
-        label="Удалить"
-        onClick={onDelete}
-        className="delete-product-btn"
-      />
+        <Button
+          label="Купить"
+          onClick={handleBuy}
+          disabled={product.bought}
+          className={product.bought ? 'buy-product-btn-disabled' : 'buy-product-btn'}
+        />
+        <Button
+          label="Удалить"
+          onClick={handleDelete}
+          className="delete-product-btn"
+        />
       </div>
     </div>
   );

@@ -2,32 +2,7 @@ export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 export const BUY_PRODUCT = 'BUY_PRODUCT';
 export const SHOW_NOTIFICATION = 'SHOW_NOTIFICATION';
-
-interface AddProductAction {
-  type: typeof ADD_PRODUCT;
-  payload: Product;
-  action: string;
-}
-
-interface DeleteProductAction {
-  type: typeof DELETE_PRODUCT;
-  payload: number; 
-  action: string;
-}
-
-interface BuyProductAction {
-  type: typeof BUY_PRODUCT;
-  payload: number; 
-  action: string;
-}
-
-interface ShowNotificationAction {
-    type: typeof SHOW_NOTIFICATION;
-    payload: string; 
-    productName?: string;
-  }
-
-export type ProductActionTypes = AddProductAction | DeleteProductAction | BuyProductAction| ShowNotificationAction;
+export const HANDLE_ACTION = 'HANDLE_ACTION'; 
 
 export interface Product {
   id: number;
@@ -39,11 +14,25 @@ export interface Product {
 }
 
 export interface ProductState {
-    products: Product[];
-    notification: NotificationState;
+  products: Product[];
+  notification: NotificationState;
 }
 
 export interface NotificationState {
-    message: string;
-    productName: string; 
+  message: string;
+  productName: string;
 }
+
+export interface Action<T, P> {
+  type: T;
+  payload: P;
+  action: string;
+}
+
+export interface AddProductAction extends Action<typeof ADD_PRODUCT, Product> {}
+export interface DeleteProductAction extends Action<typeof DELETE_PRODUCT, number> {}
+export interface BuyProductAction extends Action<typeof BUY_PRODUCT, number> {}
+export interface ShowNotificationAction extends Action<typeof SHOW_NOTIFICATION, string> {}
+export interface HandleAction extends Action<typeof HANDLE_ACTION, Product> {}
+
+export type ProductActionTypes = AddProductAction | DeleteProductAction | BuyProductAction | ShowNotificationAction | HandleAction;
